@@ -1,0 +1,87 @@
+.background {
+    background-color: yellow;
+    color: red;
+}
+
+div {
+    margin-top: 3px;
+}
+
+.hrLine {
+    background-color: aqua;
+    height: 2px;
+}
+
+.menuTitle {
+    display: flex;
+    font-weight: 1000;
+}
+
+.menuTitle div:nth-child(1),
+.menu .menuContent div:nth-child(1) {
+    min-width: 200px;
+    width: 20%;
+    font-weight: 1000;
+}
+
+.menuTitle div:nth-child(2),
+.menu .menuContent div:nth-child(2) {
+    min-width: 100px;
+    width: 10%;
+}
+
+.menuTitle div:nth-child(3),
+.menuTitle div:nth-child(4),
+.menu .menuContent div:nth-child(3),
+.menu .menuContent div:nth-child(4) {
+    font-weight: 1000;
+    min-width: 100px;
+    width: 35%;
+}
+
+.menuTitle div:nth-child(3) div,
+.menuTitle div:nth-child(4) div {
+    min-width: 100px;
+    width: 100%;
+}
+
+.menuTitle div:nth-child(3) div,
+.menuTitle div:nth-child(4) div,
+.menu .menuContent div:nth-child(3),
+.menu .menuContent div:nth-child(4) {
+    text-align: center;
+}
+
+.menu .menuContent,
+footer {
+    display: flex;
+}
+
+footer {
+    margin: 70px auto 0px auto;
+    background-color: crimson;
+    width: 90%;
+    padding: 20px 0px 20px 0px;
+}
+
+footer .footerMain {
+    margin-left: 15px;
+    color: yellow;
+    width: 20%;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+footer .footerName {
+    color: white;
+}
+
+footer .footerName:nth-child(2) {
+    width: 70%;
+}
+
+footer .footerName:nth-child(3) {
+    text-align: center;
+    width: 10%;
+}
