@@ -1,0 +1,26 @@
+.isFlex {
+    display: flex;
+    width: 95vw;
+    height: 95vh;
+}
+
+.half {
+    width: 50%;
+    background-color: aqua;
+}
+
+.icon {
+    height: 30px;
+}
+
+.introduce {
+    padding: 30% 20%;
+
+    height: 90%;
+
+}
+
+footer {
+    position: absolute;
+    top: 80%;
+}
