@@ -5,20 +5,79 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Danny</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="script/index.css">
+  <script src="https://unpkg.com/vue@next"></script>
 
 </head>
 
-<body>
-  <div>
-    <strong style="color: red; font-size: 60px;">Hello</strong>
-  </div>
+<body id="app">
+  <div class="container">
+    <div class="row">
+      <input v-for="block in blocks" class="btn btn-primary col-3" type="button" :value="block.name"
+        @click="switchBlock(block.name)">
+    </div>
 
-  <script src="odd-or-even-number.js"></script>
-  <script src="max-of-two-numbers.js"></script>
-  <script src="multiplication-table.js"></script>
-  <script src="triangle.js"></script>
-  <script src="reverse-triangle.js"></script>
-  <script src="prime-number.js"></script>
+    <div v-if="blocks[0].isActive">
+      <div>請輸入數字：<input type="number" v-model="input1"></div>
+      <button type="button" class="btn btn-outline-dark" @click="oddOrEven()">輸出結果</button><span>　結果：{{result}}</span>
+    </div>
+    <div v-if="blocks[1].isActive">
+      <div>請輸入數字：<input type="number" v-model="input1"></div>
+      <div>請輸入數字：<input type="number" v-model="input2"></div>
+      <button type="button" class="btn btn-outline-dark" @click="maxTwo()">輸出結果</button><span>　結果：{{result}}</span>
+    </div>
+    <div v-if="blocks[2].isActive">
+      <button type="button" class="btn btn-outline-dark" @click="multiplication()">輸出結果</button>
+      <div class="row">
+        <div class="col-2" v-for="res in result2">{{res}}</div>
+      </div>
+    </div>
+    <div v-if="blocks[3].isActive">
+      <div>請輸入數字：<input type="number" v-model="input1"></div>
+      <button type="button" class="btn btn-outline-dark" @click="triangle()">輸出結果</button>
+      <div v-for="res in result2">{{res}}</div>
+    </div>
+    <div v-if="blocks[4].isActive">
+      <div>請輸入數字：<input type="number" v-model="input1"></div>
+      <button type="button" class="btn btn-outline-dark" @click="reverseTriangle()">輸出結果</button>
+      <div v-for="res in result2">{{res}}</div>
+    </div>
+    <div v-if="blocks[5].isActive">
+      <div>請輸入數字：<input type="number" v-model="input1"></div>
+      <button type="button" class="btn btn-outline-dark" @click="primeNumber()">輸出結果</button>
+      <div class="row">
+        <div v-for="res in result2" class="col-1">{{res}}</div>
+      </div>
+      
+    </div>
+
+
+
+
+
+
+
+    <script src="odd-or-even-number.js"></script>
+    <script src="max-of-two-numbers.js"></script>
+    <script src="multiplication-table.js"></script>
+    <script src="triangle.js"></script>
+    <script src="reverse-triangle.js"></script>
+    <script src="prime-number.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    </script>
+
+    <script src="script/vueIndex.js"></script>
+
 </body>
 
 </html>
