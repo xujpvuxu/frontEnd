@@ -109,17 +109,13 @@ window.onload = function () {
     }
 
     function primeNumber() {
+
         for (let i = this.primeIndex[this.primeIndex.length - 1].index + 1; i <= this.input1; i++) {
             let isPrime = true;
 
-            let max = Math.sqrt(i);
-            for (let j = 2; j <= max; j++) {
+            for (let j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j === 0) {
                     isPrime = false;
-                    this.primeIndex.push({
-                        index: i,
-                        isPrime: false
-                    });
                     break;
                 }
             }
@@ -129,9 +125,16 @@ window.onload = function () {
                     isPrime: true
                 });
             }
+            else if(i === this.input1){
+                this.primeIndex.push({
+                    index: i,
+                    isPrime: false
+                });
+                
+            }
 
         }
-        this.result2= this.primeIndex.filter(x => x.isPrime).map(x => {
+        this.result2= this.primeIndex.filter(x => x.isPrime && x.index<=this.input1).map(x => {
             return x.index
         });
     }

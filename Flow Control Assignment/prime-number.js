@@ -1,4 +1,8 @@
-var index = [{ index: 2, isPrime: true }];
+var index = [{
+  index: 2,
+  isPrime: true
+}];
+
 function primeNumber(number) {
   for (let i = index[index.length - 1].index + 1; i <= number; i++) {
     let isPrime = true;
@@ -7,14 +11,22 @@ function primeNumber(number) {
     for (let j = 2; j <= max; j++) {
       if (i % j === 0) {
         isPrime = false;
-        index.push({index:i,isPrime:false});
+        index.push({
+          index: i,
+          isPrime: false
+        });
         break;
       }
     }
-    if(isPrime){
-      index.push({index:i,isPrime:true});
+    if (isPrime) {
+      index.push({
+        index: i,
+        isPrime: true
+      });
     }
-    
+
   }
-  return index.filter(x=>x.isPrime).map(x=>{return x.index});
+  return index.filter(x => x.isPrime && x.index <= number).map(x => {
+    return x.index
+  });
 }
